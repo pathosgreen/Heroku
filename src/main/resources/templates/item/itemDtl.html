@@ -138,7 +138,13 @@
 
   <div class="d-flex">
     <div class="repImgDiv">
-      <img th:src="${item.itemImgDtoList[0].imgUrl}" class="rounded repImg" th:alt="${item.itemNm}">
+
+      <img th:if="${item.itemNm == '바나나'}" src="https://pathosgreen.dothome.co.kr/img/shop/bananas-g90f82f2ad_640.jpg?_t=1663309164" class="rounded repImg" th:alt="${item.itemNm}">
+      <img th:if="${item.itemNm == '토마토'}" src="https://pathosgreen.dothome.co.kr/img/shop/tomatoes-gaaa7a9ef9_640.jpg?_t=1663309656" class="rounded repImg" th:alt="${item.itemNm}">
+      <img th:if="${item.itemNm == '청포도'}" src="https://pathosgreen.dothome.co.kr/img/shop/fruit-gdbf7ae05d_640.jpg?_t=1663309656" class="rounded repImg" th:alt="${item.itemNm}">
+      <img th:if="${item.itemNm == '딸기'}" src="https://pathosgreen.dothome.co.kr/img/shop/strawberry-g498bceb92_640.jpg?_t=1663309656" class="rounded repImg" th:alt="${item.itemNm}">
+      <img th:if="${item.itemNm == '키위'}" src="https://pathosgreen.dothome.co.kr/img/shop/kiwifruit-g2cc33bb60_640.jpg?_t=1663309656" class="rounded repImg" th:alt="${item.itemNm}">
+      <img th:if="${item.itemNm == '사과'}" src="https://pathosgreen.dothome.co.kr/img/shop/healthy-g38ae825c1_640.jpg?_t=1663309656" class="rounded repImg" th:alt="${item.itemNm}">
     </div>
     <div class="wd50">
       <span th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="badge badge-primary mgb-15">
@@ -185,8 +191,13 @@
     </div>
   </div>
 
-  <div th:each="itemImg : ${item.itemImgDtoList}" class="text-center">
-    <img th:if="${not #strings.isEmpty(itemImg.imgUrl)}" th:src="${itemImg.imgUrl}" class="rounded mgb-15" width="800">
+  <div class="text-center">
+    <img th:if="${item.itemNm == '바나나'}" src="https://pathosgreen.dothome.co.kr/img/shop/bananas-g90f82f2ad_640.jpg?_t=1663309164" class="rounded mgb-15" width="800">
+    <img th:if="${item.itemNm == '토마토'}" src="https://pathosgreen.dothome.co.kr/img/shop/tomatoes-gaaa7a9ef9_640.jpg?_t=1663309656" class="rounded mgb-15" width="800">
+    <img th:if="${item.itemNm == '청포도'}" src="https://pathosgreen.dothome.co.kr/img/shop/fruit-gdbf7ae05d_640.jpg?_t=1663309656" class="rounded mgb-15" width="800">
+    <img th:if="${item.itemNm == '딸기'}" src="https://pathosgreen.dothome.co.kr/img/shop/strawberry-g498bceb92_640.jpg?_t=1663309656" class="rounded mgb-15" width="800">
+    <img th:if="${item.itemNm == '키위'}" src="https://pathosgreen.dothome.co.kr/img/shop/kiwifruit-g2cc33bb60_640.jpg?_t=1663309656" class="rounded mgb-15" width="800">
+    <img th:if="${item.itemNm == '사과'}" src="https://pathosgreen.dothome.co.kr/img/shop/healthy-g38ae825c1_640.jpg?_t=1663309656" class="rounded mgb-15" width="800">
   </div>
 </div>
 

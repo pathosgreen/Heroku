@@ -105,7 +105,12 @@
     <div class="card d-flex">
       <div th:each="orderItem : ${order.orderItemDtoList}" class="d-flex mb-3">
         <div class="repImgDiv">
-          <img th:src="${orderItem.imgUrl}" class = "rounded repImg" th:alt="${orderItem.itemNm}">
+          <img th:if="${orderItem.itemNm == '바나나'}" src="https://pathosgreen.dothome.co.kr/img/shop/bananas-g90f82f2ad_640.jpg?_t=1663309164" class="rounded repImg">
+          <img th:if="${orderItem.itemNm == '토마토'}" src="https://pathosgreen.dothome.co.kr/img/shop/tomatoes-gaaa7a9ef9_640.jpg?_t=1663309656" class="rounded repImg">
+          <img th:if="${orderItem.itemNm == '청포도'}" src="https://pathosgreen.dothome.co.kr/img/shop/fruit-gdbf7ae05d_640.jpg?_t=1663309656" class="rounded repImg">
+          <img th:if="${orderItem.itemNm == '딸기'}" src="https://pathosgreen.dothome.co.kr/img/shop/strawberry-g498bceb92_640.jpg?_t=1663309656" class="rounded repImg">
+          <img th:if="${orderItem.itemNm == '키위'}" src="https://pathosgreen.dothome.co.kr/img/shop/kiwifruit-g2cc33bb60_640.jpg?_t=1663309656" class="rounded repImg">
+          <img th:if="${orderItem.itemNm == '사과'}" src="https://pathosgreen.dothome.co.kr/img/shop/healthy-g38ae825c1_640.jpg?_t=1663309656" class="rounded repImg">
         </div>
         <div class="align-self-center w-75">
           <span th:text="${orderItem.itemNm}" class="fs24 font-weight-bold"></span>
