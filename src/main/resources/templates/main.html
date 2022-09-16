@@ -47,34 +47,81 @@
     <p class="h3 font-weight-bold" th:text="${itemSearchDto.searchQuery} + '검색 결과'"></p>
   </div>
 
-      <div class="col-md-4 margin">
-        <div class="card">
-          <a th:href="/item/2" class="text-dark">
-            <img th:src="https://pathosgreen.dothome.co.kr/img/shop/bananas-g90f82f2ad_640.jpg?_t=1663309164" class="card-img-top" th:alt="바나나" height="400">
-            <div class="card-body">
-              <h4 class="card-title">바나나</h4>
-              <p class="card-text">노랗고 맛있는 바나나</p>
-              <h3 class="card-title text-danger">1200원</h3>
-            </div>
-          </a>
-        </div>
-      </div>
+
 
   <div class="row">
-    <th:block th:each="item, status: ${items.getContent()}">
-      <div class="col-md-4 margin">
-        <div class="card">
-          <a th:href="'/item/' +${item.id}" class="text-dark">
-            <img th:src="${item.imgUrl}" class="card-img-top" th:alt="${item.itemNm}" height="400">
-            <div class="card-body">
-              <h4 class="card-title">[[${item.itemNm}]]</h4>
-              <p class="card-text">[[${item.itemDetail}]]</p>
-              <h3 class="card-title text-danger">[[${item.price}]]원</h3>
-            </div>
-          </a>
-        </div>
+    <div class="col-md-4 margin">
+      <div class="card">
+        <a href="/item/32" class="text-dark">
+          <img src="https://pathosgreen.dothome.co.kr/img/shop/healthy-g38ae825c1_640.jpg?_t=1663309656" class="card-img-top" alt="사과" height="400">
+          <div class="card-body">
+            <h4 class="card-title">사과</h4>
+            <p class="card-text">풋사과 반 사과 반</p>
+            <h3 class="card-title text-danger">1500원</h3>
+          </div>
+        </a>
       </div>
-    </th:block>
+    </div>
+    <div class="col-md-4 margin">
+      <div class="card">
+        <a href="/item/26" class="text-dark">
+          <img src="https://pathosgreen.dothome.co.kr/img/shop/kiwifruit-g2cc33bb60_640.jpg?_t=1663309656" class="card-img-top" alt="키위" height="400">
+          <div class="card-body">
+            <h4 class="card-title">키위</h4>
+            <p class="card-text">황금색 골든 키위가 아닌 그냥 키위</p>
+            <h3 class="card-title text-danger">990원</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4 margin">
+      <div class="card">
+        <a href="/item/20" class="text-dark">
+          <img src="https://pathosgreen.dothome.co.kr/img/shop/strawberry-g498bceb92_640.jpg?_t=1663309656" class="card-img-top" alt="딸기" height="400">
+          <div class="card-body">
+            <h4 class="card-title">딸기</h4>
+            <p class="card-text">빨갛고 작은 딸기</p>
+            <h3 class="card-title text-danger">500원</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4 margin">
+      <div class="card">
+        <a href="/item/14" class="text-dark">
+          <img src="https://pathosgreen.dothome.co.kr/img/shop/fruit-gdbf7ae05d_640.jpg?_t=1663309656" class="card-img-top" alt="청포도" height="400">
+          <div class="card-body">
+            <h4 class="card-title">청포도</h4>
+            <p class="card-text">청록색이 아름다운 청포도</p>
+            <h3 class="card-title text-danger">1300원</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4 margin">
+      <div class="card">
+        <a href="/item/8" class="text-dark">
+          <img src="https://pathosgreen.dothome.co.kr/img/shop/tomatoes-gaaa7a9ef9_640.jpg?_t=1663309656" class="card-img-top" alt="토마토" height="400">
+          <div class="card-body">
+            <h4 class="card-title">토마토</h4>
+            <p class="card-text">붉은 토마토</p>
+            <h3 class="card-title text-danger">800원</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4 margin">
+      <div class="card">
+        <a href="/item/2" class="text-dark">
+          <img src="https://pathosgreen.dothome.co.kr/img/shop/bananas-g90f82f2ad_640.jpg?_t=1663309164" class="card-img-top" alt="바나나" height="400">
+          <div class="card-body">
+            <h4 class="card-title">바나나</h4>
+            <p class="card-text">노랗고 맛있는 바나나</p>
+            <h3 class="card-title text-danger">2500원</h3>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 
   <div th:with="start=${(items.number/maxPage)*maxPage + 1}, end=(${(items.totalPages == 0) ? 1 : (start + (maxPage - 1) < items.totalPages ? start + (maxPage - 1) : items.totalPages)})" >
